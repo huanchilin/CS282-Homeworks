@@ -25,6 +25,11 @@ namespace Example05
             Orientation = Orientation + angle;
         }
 
+        public void TurnLeft(double angle)
+        {
+            Orientation = Orientation - angle;
+        }
+
         public void ShowPosition()
         {
             Console.WriteLine("{0}'s position is at: ({1},{2}) Orientation at {3} degree", Name, Pos.X, Pos.Y, Orientation);
@@ -51,10 +56,10 @@ namespace Example05
         {
             for (var count = 0; count < 2; count++)
             {
-                this.MoveForward(width);
-                this.TurnRight(90);
-                this.MoveForward(length);
-                this.TurnRight(90);
+                this.MoveForward(-length);
+                this.TurnLeft(90);
+                this.MoveForward(-width);
+                this.TurnLeft(90);
                 this.ShowPosition();
             }
         }
